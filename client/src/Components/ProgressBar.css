@@ -1,0 +1,105 @@
+.progressbar {
+  width: 75%;
+  height: 80%;
+  margin: auto;
+  /* margin-top: 11%; */
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  /* top: 50%; */
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  /* padding-top: 10%; */
+  margin-right: 8%;
+  margin-top: 10%;
+}
+
+.ant-progress-text {
+  color: #780012;
+}
+
+.ant-progress-outer {
+  padding-left: 1rem;
+}
+
+.ant-progress-inner {
+  border: 1px #780012 solid;
+}
+
+.counter {
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+  color: #780012;
+}
+
+.counter_text {
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  margin-top: 35px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: start;
+  margin-top: -20px;
+}
+.grid-item {
+  text-align: right;
+  margin-left: 20px;
+}
+
+.grid-item p {
+  margin-bottom: 0px;
+}
+
+.taken {
+  font-size: 30px;
+  font-weight: 700;
+  color: #780012;
+}
+
+@media screen and (max-width: 1000px) {
+  .progressbar {
+    margin: 0;
+    margin-top: 33%;
+    width: auto;
+    padding-top: 13%;
+    position: relative;
+  }
+
+  .taken {
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .progressbar {
+    /* margin: 0; */
+    margin-top: 9%;
+    /* width: auto; */
+    padding-top: 13%;
+    width: inherit;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .progressbar {
+    width: 75%;
+    height: 80%;
+    transform: translateY(-50%);
+    position: absolute;
+    margin-right: 8%;
+    margin-top: 10%;
+    padding-top: 0px;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .progressbar {
+    margin-top: 5%;
+  }
+}

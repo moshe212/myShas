@@ -1,0 +1,30 @@
+.Box {
+  height: fit-content !important;
+  width: 30% !important;
+}
+
+.Close {
+  font-size: small;
+  color: #780012;
+  margin-left: 8rem;
+  margin-right: -50%;
+  margin-top: 1rem;
+  line-height: 3px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+  .Box {
+    width: 80% !important;
+    z-index: 2 !important;
+  }
+
+  .Close {
+    font-size: medium;
+    margin-right: -40%;
+  }
+
+  .spin {
+    width: 330px !important;
+  }
+}

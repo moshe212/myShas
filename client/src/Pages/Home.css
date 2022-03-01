@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500&display=swap");
+/* .TickerRoot {
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  z-index: 2;
+  position: relative;
+} */
+
+.header-grid-container {
+  height: 4rem;
+  opacity: 80%;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-gap: 10px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 3px 6px #00000029;
+  align-items: center;
+  position: fixed;
+}
+
+.header-grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  /* text-align: center; */
+  /* padding: 20px 0; */
+  /* font-size: 30px; */
+}
+
+.item1 {
+  grid-column: 1;
+}
+
+.item1 img {
+  width: 5%;
+}
+
+.item2 {
+  /* grid-column: 2 / 4; */
+  font-family: "Assistant", sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+  text-align: start;
+  margin-left: -7rem;
+  margin-right: -40%;
+}
+
+.item3,
+.item4,
+.item5,
+.item6 {
+  font-family: "Assistant", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+}
+
+.item5 {
+  grid-column: 5/13;
+  text-align: start;
+  padding-right: 5%;
+}
+
+.item6 {
+  border: 1px solid #780012;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.item3:hover {
+  color: #780012;
+}
+
+.item4:hover {
+  color: #780012;
+}
+
+.item5:hover {
+  color: #780012;
+}
+
+.item6:hover {
+  color: #780012;
+}
+
+.ProjectImg {
+  /* Set rules to fill background */
+  min-height: 40%;
+  min-width: 1000px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ProjectRoot {
+  /* margin-top: 0px;
+  background-color: #ffff;
+  border-radius: 50px 50px 0 0;
+  padding: 40px 0 40px 0; */
+  width: 100%;
+  /* top: 72%; 
+  max-width: 100%;
+  position: absolute;
+  z-index: 1;
+  height: 100%; */
+}
+
+.ProjectDetails {
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 50px 50px 0 0;
+  z-index: 1;
+  /* top: 62%; */
+  margin-top: 40%;
+  background-color: white;
+  position: absolute;
+  box-shadow: 0 3px 6px #00000029;
+  /* display: flex;
+  flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  /* background-image: url("../../public/Images/shas_bg.jpg"); */
+}
+
+.ChoosBox {
+  /* position: absolute; */
+  display: block;
+  width: 190px;
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 0 3px 6px #00000029;
+  border-radius: 5px;
+  top: -70px;
+  right: 300px;
+  padding: 8px;
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.ChoosBox > p {
+  margin-bottom: -40px;
+}
+
+.Button {
+  margin-top: 10%;
+}
+
+.ant-btn {
+  width: 75%;
+}
+
+.ant-btn-round {
+  height: 37px;
+}
+
+.BizLogoImg {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.ProjectText {
+  /* border-top: 0.5px solid gray; */
+  /* height: 10px; */
+  /* width: 45%; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.TextOnProject {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  color: #780012;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.TextOnProject_H {
+  width: 50%;
+  font-family: "Assistant", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.TextOnProject_P {
+  width: 60%;
+}
+
+.BizDigitalIcon img {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.ChoiseFlexContainer {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: -5%;
+  /* margin-right: 22%; */
+  justify-content: center;
+  width: 100%;
+}
+
+.ChoiseFlexContainer > div {
+  background-color: #f1f1f1;
+  width: 12%;
+  height: max-content;
+  margin-right: 15px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  box-shadow: 0px 0px 42px 0px rgb(89 51 15 / 20%),
+    inset 0px 0px 45px 0px rgb(242 138 51 / 24%);
+  border-radius: 8px;
+}
+
+.donate {
+  width: 2%;
+  height: 16%;
+  /* margin-top: -5rem; */
+  background-color: #780012;
+  border-radius: 8px;
+  margin-right: 97vw;
+  margin-top: -7%;
+  /* position: absolute;
+  left: auto; */
+  writing-mode: tb-rl;
+  font-family: "Assistant", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+
+.progressRoot {
+  width: 70%;
+  padding: 5%;
+  height: 15rem;
+  margin: auto;
+  margin-top: 25%;
+  /* background-color: #f6f8f2; */
+  /* background-color: rgb(255, 228, 196, 0.2); */
+  border-radius: 20px;
+  /* border: 1px solid #780012; */
+  box-shadow: 0px 0px 42px 0px rgb(89 51 15 / 20%),
+    inset 0px 0px 45px 0px rgb(242 138 51 / 24%);
+  position: relative;
+}
+
+.footer {
+  width: 100%;
+  height: 30%;
+  background-color: #780012;
+}
+
+.footer p {
+  font-family: "Assistant", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  margin: auto;
+}
+
+.footerImg {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .ProjectImg {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    min-width: auto;
+  }
+
+  .ChoiseFlexContainer {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 3%;
+  }
+
+  .ChoiseFlexContainer div {
+    /* width: 190px; */
+    /* margin: 0px; */
+  }
+
+  .ProjectDetails {
+    margin: auto;
+  }
+
+  .ChoosBox {
+    margin: 45px !important;
+    width: 80% !important;
+    z-index: 2;
+  }
+
+  .Button {
+    width: 100% !important;
+    margin-top: 0px !important;
+  }
+
+  .TextOnProject_P {
+    width: 75%;
+  }
+
+  .progressRoot {
+    margin-bottom: 15%;
+    margin-top: 35%;
+    width: 85%;
+    height: 17rem;
+  }
+
+  .header-grid-container {
+    position: relative;
+    opacity: 100%;
+  }
+
+  .item3,
+  .item4,
+  .item5 {
+    display: none;
+  }
+
+  .item2 {
+    margin-right: 0px;
+  }
+
+  .item6 {
+    grid-column: 12;
+  }
+
+  .header-grid-container {
+    grid-gap: 0px;
+    padding: 0px;
+  }
+
+  .Form {
+    width: 80% !important;
+  }
+
+  .footerImg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .ChoiseFlexContainerImg {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .ChoiseFlexContainerImg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .progressRoot {
+    margin-top: 15%;
+  }
+}

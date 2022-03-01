@@ -1,0 +1,33 @@
+.scroll {
+  overflow: auto;
+  height: 100px;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+
+.subchapteBtn {
+  background-color: #f6f8f2;
+  width: 4rem;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: -13px;
+  color: #780012;
+  /* border: 1px solid #780012; */
+  border-bottom: 1px solid #780012;
+}
+
+.chapteBtn {
+  margin-top: -6px;
+  color: #f6f8f2;
+}
+
+@media screen and (max-width: 1000px) {
+  .buttonsList {
+    width: auto !important;
+  }
+
+  .scroll {
+    margin: auto;
+    width: 80% !important;
+  }
+}

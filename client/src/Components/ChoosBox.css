@@ -1,0 +1,15 @@
+Button span {
+  color: #f6f8f2;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ChoosBox p {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1000px) {
+  .ChoosBox p {
+    display: inline;
+  }
+}

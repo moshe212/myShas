@@ -1,0 +1,46 @@
+.Form {
+  height: fit-content !important;
+  width: 30% !important;
+}
+
+.ant-form-horizontal {
+  margin-top: 10px !important;
+  padding-top: 15px;
+}
+
+.Close {
+  font-size: small;
+  color: #780012;
+  margin-left: 8rem;
+  margin-right: -40%;
+  margin-top: 1rem;
+  line-height: 3px;
+  cursor: pointer;
+}
+
+.rootForm {
+  width: auto;
+  margin: auto;
+}
+
+.ant-form-item-control-input {
+  width: 80%;
+  margin: auto;
+}
+
+.ant-input {
+  width: 80%;
+}
+
+.waStar {
+  font-family: "Assistant", sans-serif;
+  /* font-weight: 400; */
+  font-size: 11px;
+  margin-top: -3%;
+}
+
+@media screen and (max-width: 850px) {
+  .Form {
+    z-index: 2;
+  }
+}
