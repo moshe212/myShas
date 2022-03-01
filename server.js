@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "Client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 let port = process.env.PORT;
 if (port == null || port == "") {
