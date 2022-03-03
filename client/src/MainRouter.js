@@ -15,9 +15,15 @@ const MainRouter = () => {
         <Route path="/RegisterBizForm/:cellPhone">
           <RegisterBizForm />
         </Route>
-        <Route path="/Books">
-          <Books />
-        </Route>
+        <Route
+          path="/Books"
+          component={() => {
+            window.location = "https://www.jgive.com/new/he/ils/contacts";
+            return null;
+          }}
+        />
+        {/* <Books /> */}
+        {/* </Route> */}
         <Route exact path="/">
           <BizDetails />
         </Route>
