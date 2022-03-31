@@ -26,5 +26,6 @@
 
   .spin {
     width: 330px !important;
+    z-index: 2 !important;
   }
 }

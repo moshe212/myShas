@@ -50,7 +50,12 @@ const ChoosBox = (props) => {
   };
 
   console.log(props);
-  if (!isInChoise && !isChoise) {
+  if (isSendDetails) {
+    setTimeout(function () {
+      setIsSendDetails(false);
+    }, 2000);
+    return <div className="thank-you ChoosBox">יישר כח</div>;
+  } else if (!isInChoise && !isChoise) {
     return (
       <div className="ChoosBox">
         <p>

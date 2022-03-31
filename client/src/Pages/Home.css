@@ -152,6 +152,10 @@
   margin-bottom: -40px;
 }
 
+.Box {
+  margin: 0px !important;
+}
+
 .Button {
   margin-top: 10%;
 }
@@ -266,13 +270,13 @@
   position: relative;
 }
 
-.footer {
+.ProjectRoot .footer {
   width: 100%;
   height: 30%;
   background-color: #780012;
 }
 
-.footer p {
+.ProjectRoot .footer p {
   font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -281,7 +285,7 @@
   margin: auto;
 }
 
-.footerImg {
+.ProjectRoot .footerImg {
   width: 100%;
 }
 
@@ -299,7 +303,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 3%;
+    margin-top: 0%;
   }
 
   .ChoiseFlexContainer div {
@@ -338,6 +342,10 @@
     opacity: 100%;
   }
 
+  .item1 {
+    margin-right: 10px;
+  }
+
   .item3,
   .item4,
   .item5 {
@@ -369,6 +377,8 @@
 @media screen and (max-width: 750px) {
   .ChoiseFlexContainerImg {
     position: absolute;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -378,8 +388,29 @@
   }
 }
 
+/* @media screen and (min-width: 1000px) {
+  .ProjectDetails {
+    margin-top: 83%;
+  }
+} */
+
 @media screen and (min-width: 1400px) {
   .progressRoot {
     margin-top: 15%;
   }
+  /* .ProjectDetails {
+    margin-top: 60%;
+  } */
 }
+
+/* @media screen and (min-width: 1500px) {
+  .ProjectDetails {
+    margin-top: 55%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .ProjectDetails {
+    margin-top: 38%;
+  }
+} */

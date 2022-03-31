@@ -18,6 +18,8 @@
     "express": "^4.17.2",
     "http": "^0.0.1-security",
     "mongoose": "^6.1.7",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-animated-modal": "^1.1.1",
+    "react-script-tag": "^1.1.2"
   }
 }

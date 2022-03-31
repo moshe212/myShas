@@ -1,31 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import BizDetails from "./Pages/Home";
-import Books from "./Pages/Books";
-import RegisterBizForm from "./RegisterBizForm";
+import Home from "./Pages/Home";
+import MainBooks from "./Pages/Books/MainBooks";
+import Books from "./Pages/Books/Books";
 
 const MainRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/BizDetails/:id">
-          <BizDetails />
+        <Route path="/mainBooks/:bookId">
+          {/* //   component={() => {
+        //     window.location = "https://www.jgive.com/new/he/ils/contacts";
+        //     return null;
+        //   }}
+        //  /> */}
+          <Books />
         </Route>
-        <Route path="/RegisterBizForm/:cellPhone">
-          <RegisterBizForm />
+        <Route path="/mainBooks">
+          {/* //   component={() => {
+        //     window.location = "https://www.jgive.com/new/he/ils/contacts";
+        //     return null;
+        //   }}
+        //  /> */}
+          <MainBooks />
         </Route>
         <Route
-          path="/Books"
+          path="/jGive"
           component={() => {
             window.location = "https://www.jgive.com/new/he/ils/contacts";
             return null;
           }}
         />
-        {/* <Books /> */}
-        {/* </Route> */}
+
         <Route exact path="/">
-          <BizDetails />
+          <Home />
         </Route>
       </Switch>
     </Router>

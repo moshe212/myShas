@@ -19,7 +19,7 @@ const Home = () => {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/Books");
+    history.push("/mainBooks");
   }
 
   const handelAvailable = (newValue) => {
@@ -44,7 +44,12 @@ const Home = () => {
       <div className="ProjectHeader ">
         <div className="TickerRoot">
           <div className="header-grid-container">
-            <img className="item1" src="/Images/book.png" alt=""></img>
+            <img
+              className="item1"
+              src="/Images/book.png"
+              alt=""
+              onClick={handleClick}
+            ></img>
 
             <div className="item2">חלוקת הש"ס</div>
             <AnchorLink
@@ -82,7 +87,7 @@ const Home = () => {
           <div className="ChoiseFlexContainer" id="ChoiseFlexContainer">
             <img
               className="ChoiseFlexContainerImg"
-              src="/Images/clear_background.jpg"
+              src="/Images/backgroundForPhone.jpg"
               alt=""
             ></img>
             <ChoosBox

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "antd";
-import DetailsForm from "./DetailsForm";
+
 import "./List.css";
 
 const List = (props) => {
@@ -19,9 +19,13 @@ const List = (props) => {
           shape="round"
           onClick={(e) => {
             // setIsChoose(true);
+            console.log(
+              "e.target.innerText",
+              e.target.parentNode.firstChild.innerText
+            );
             Choose(
               "true",
-              e.target.innerText,
+              e.target.parentNode.firstChild.innerText,
               props.choseID,
               props.choseID === "masechet"
                 ? item.TractateCounter

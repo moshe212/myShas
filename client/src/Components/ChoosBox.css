@@ -13,3 +13,9 @@ Button span {
     display: inline;
   }
 }
+
+.thank-you {
+  font-family: "Assistant", sans-serif !important;
+  font-weight: 700 !important;
+  height: 175px !important;
+}
