@@ -76,6 +76,9 @@ const Home = () => {
             >
               הצטרף עכשיו
             </AnchorLink>
+            <div className="books-phone-view-btn" onClick={handleClick}>
+              הספרים
+            </div>
           </div>
           {/* <BizTicker /> */}
         </div>

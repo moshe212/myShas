@@ -25,7 +25,7 @@ const MainBooks = () => {
           visible={visible}
           onOk={() => setVisible(false)}
           onCancel={() => setVisible(false)}
-          width={1200}
+          width={"80%"}
           footer={[]}
         >
           {bookId === "lekachSholomo" ? (
@@ -50,7 +50,7 @@ const MainBooks = () => {
             <iframe
               id="ytplayer"
               type="text/html"
-              width="1100"
+              width="95%"
               height="405"
               title="youtube_iframe"
               src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0_fWQoFpmvgPSxS3IAQkK_A"
@@ -61,11 +61,14 @@ const MainBooks = () => {
         </Modal>
       </div>
       <div className="main-books-header-grid-container">
-        <img className="item1" src="/Images/book.png" alt=""></img>
+        <img
+          className="main-books-item1"
+          src="/Images/book.png"
+          alt=""
+          onClick={handleClick}
+        ></img>
 
-        <div className="main-books-item2" onClick={handleClick}>
-          חלוקת הש"ס
-        </div>
+        <div className="main-books-item2">הספרים</div>
         <div className="main-books-item6" onClick={goToJgive}>
           היה שותף
         </div>
