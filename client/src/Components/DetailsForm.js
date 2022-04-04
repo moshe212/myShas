@@ -10,6 +10,7 @@ const DetailsForm = (props) => {
 
   const Send = (state) => {
     props.satusMainBtn(state);
+    console.log("send", state);
   };
 
   const Close = () => {

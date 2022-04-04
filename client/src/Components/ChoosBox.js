@@ -32,16 +32,23 @@ const ChoosBox = (props) => {
   const handleSendDetails = (newValue, learnDetails) => {
     const detailsToSRV = { ...details, ...learnDetails };
     console.log("Send", newValue, detailsToSRV);
-    setIsSendDetails(newValue);
-    setIsChoise(false);
-    setisInChoise(false);
+
     if (learnDetails) {
       axios
         .post("/api/LearnRegistration", {
           detailsToSRV,
         })
         .then(function (response) {
-          console.log(response);
+          console.log("response", response);
+          if (response.data === "OK") {
+            setIsSendDetails(newValue);
+            setIsChoise(false);
+            setisInChoise(false);
+          } else {
+            setIsSendDetails("notSaveInDB");
+            setIsChoise(false);
+            setisInChoise(false);
+          }
         })
         .catch(function (error) {
           console.log(error);
@@ -55,6 +62,15 @@ const ChoosBox = (props) => {
       setIsSendDetails(false);
     }, 2000);
     return <div className="thank-you ChoosBox">יישר כח</div>;
+  } else if (isSendDetails === "notSaveInDB") {
+    setTimeout(function () {
+      setIsSendDetails(false);
+    }, 2000);
+    return (
+      <div className="err ChoosBox">
+        לצערנו קרתה תקלה בשמירת הנתונים. נא בחר שוב.
+      </div>
+    );
   } else if (!isInChoise && !isChoise) {
     return (
       <div className="ChoosBox">

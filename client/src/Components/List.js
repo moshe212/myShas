@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Button } from "antd";
 
 import "./List.css";
 
 const List = (props) => {
   // const [isChoose, setIsChoose] = useState(false);
-
   const Choose = (state, details, choseID, id, TractateCounter) => {
     props.onChange(state, details, choseID, id, TractateCounter);
   };
@@ -18,14 +17,12 @@ const List = (props) => {
           type="primary"
           shape="round"
           onClick={(e) => {
-            // setIsChoose(true);
-            console.log(
-              "e.target.innerText",
-              e.target.parentNode.firstChild.innerText
-            );
+            console.log("gemara", item);
             Choose(
               "true",
-              e.target.parentNode.firstChild.innerText,
+              props.choseID === "masechet"
+                ? item.TractateName
+                : item.ChapterName,
               props.choseID,
               props.choseID === "masechet"
                 ? item.TractateCounter
@@ -34,7 +31,6 @@ const List = (props) => {
                 : "",
               item.TractateCounter
             );
-            console.log("c", e.target.value);
           }}
           size="Large"
         >

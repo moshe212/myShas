@@ -55,30 +55,48 @@ app.post("/api/LearnRegistration", async (req, res) => {
       : "";
   console.log(searchParameter);
   if (choseID === "masechet") {
-    const resulte = await models.ChapterDetails.updateMany(searchParameter, {
-      $set: {
-        isTaken: true,
-        isfullTractate: false,
-        FullName: learnName,
-        Phone: learnPhone,
-      },
-    });
-    console.log(resulte);
-    res.status(200).send("OK");
-  } else {
-    const resulte = await models.ChapterDetails.updateOne(searchParameter, {
-      $set: { isTaken: true, FullName: learnName, Phone: learnPhone },
-    });
-    console.log(resulte);
-    const resulte2 = await models.ChapterDetails.updateMany(
-      { TractateCounter: tractateCounter },
-      {
-        $set: { isfullTractate: false },
+    try {
+      const resulte = await models.ChapterDetails.updateMany(searchParameter, {
+        $set: {
+          isTaken: true,
+          isfullTractate: false,
+          FullName: learnName,
+          Phone: learnPhone,
+        },
+      });
+      console.log(resulte);
+      if (resulte.matchedCount > 0) {
+        res.status(200).send("OK");
+      } else {
+        res.send("not save on db");
       }
-    );
-    console.log(resulte2);
+    } catch (e) {
+      console.log("not success save masechet learnDetail on db", e);
+      res.send("not save on db");
+    }
+  } else {
+    try {
+      const resulte = await models.ChapterDetails.updateOne(searchParameter, {
+        $set: { isTaken: true, FullName: learnName, Phone: learnPhone },
+      });
+      console.log(resulte);
 
-    res.status(200).send("OK");
+      if (resulte.matchedCount > 0) {
+        const resulte2 = await models.ChapterDetails.updateMany(
+          { TractateCounter: tractateCounter },
+          {
+            $set: { isfullTractate: false },
+          }
+        );
+        console.log(resulte2);
+        res.status(200).send("OK");
+      } else {
+        res.send("not save on db");
+      }
+    } catch (error) {
+      console.log("not success save chapter learnDetail on db", error);
+      res.send("not save on db");
+    }
   }
 });
 
