@@ -5,8 +5,15 @@ import "./List.css";
 
 const List = (props) => {
   // const [isChoose, setIsChoose] = useState(false);
-  const Choose = (state, details, choseID, id, TractateCounter) => {
-    props.onChange(state, details, choseID, id, TractateCounter);
+  const Choose = (
+    state,
+    details,
+    choseID,
+    id,
+    TractateCounter,
+    TractateName
+  ) => {
+    props.onChange(state, details, choseID, id, TractateCounter, TractateName);
   };
   console.log("items", props.items);
   return (
@@ -29,7 +36,8 @@ const List = (props) => {
                 : props.choseID === "chapter"
                 ? item.ID
                 : "",
-              item.TractateCounter
+              item.TractateCounter,
+              props.choseID === "chapter" ? item.TractateName : ""
             );
           }}
           size="Large"

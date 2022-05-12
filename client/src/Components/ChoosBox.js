@@ -12,8 +12,15 @@ const ChoosBox = (props) => {
   const [isSendDetails, setIsSendDetails] = useState(false);
   const [details, setDetails] = useState({});
 
-  const handleChange = (changeValue, gemara, choseID, id, TractateCounter) => {
-    console.log("newValue", changeValue, gemara);
+  const handleChange = (
+    changeValue,
+    gemara,
+    choseID,
+    id,
+    TractateCounter,
+    TractateName
+  ) => {
+    console.log("newValue", changeValue, gemara, TractateName);
     setIsChoise(changeValue);
     setDetails({
       ...details,
@@ -21,6 +28,7 @@ const ChoosBox = (props) => {
       choseID: choseID,
       id: id,
       tractateCounter: TractateCounter,
+      tractateName: TractateName,
     });
   };
 
