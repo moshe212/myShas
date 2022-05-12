@@ -11,7 +11,7 @@ const ProgressBar = (props) => {
     const totallPages = props.data.map((item) => item.ChapterNumberOfPages);
     console.log("totallPages", totallPages);
     const total = totallPages.reduce(
-      (prev, curr) => parseInt(prev) + parseInt(curr),
+      (prev, curr) => parseFloat(prev) + parseFloat(curr),
       0
     );
     console.log("total", total);
