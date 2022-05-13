@@ -69,7 +69,12 @@ const ChoosBox = (props) => {
     setTimeout(function () {
       setIsSendDetails(false);
     }, 2000);
-    return <div className="thank-you ChoosBox">יישר כח</div>;
+    return (
+      <div className="thank-you ChoosBox">
+        <p>יישר כח</p>
+        <p>{`${details.gemara} ${details.tractateName}`}</p>
+      </div>
+    );
   } else if (isSendDetails === "notSaveInDB") {
     setTimeout(function () {
       setIsSendDetails(false);
