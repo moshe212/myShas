@@ -25,6 +25,7 @@ const DetailsForm = (props) => {
     setLearnDetails({ ...learnDetails, [nam]: val });
   };
   const onFinish = (values) => {
+    console.log("values", values);
     console.log("Success:", learnDetails);
     console.log("Details:", props.Details);
     props.onSend("true", learnDetails);
@@ -48,12 +49,19 @@ const DetailsForm = (props) => {
         onFinishFailed={onFinishFailed}
       >
         <div className="rootForm">
-          <Form.Item>
+          <Form.Item
+            name="learnName"
+            rules={[
+              {
+                required: true,
+                message: "שדה זה הינו שדה חובה",
+              },
+            ]}
+          >
             <Input
               name="learnName"
               onChange={getValueFromEvent}
               placeholder="שם מלא"
-              // style={{ width: "auto" }}
             />
           </Form.Item>
           <Form.Item>

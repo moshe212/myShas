@@ -14,6 +14,12 @@ Button span {
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .anticon-down-circle{
+    display:none
+  }
+}
+
 .thank-you{
   font-family: "Assistant", sans-serif !important;
   font-weight: 700 !important;
@@ -24,4 +30,27 @@ Button span {
   font-family: "Assistant", sans-serif !important;
   font-weight: 700 !important;
   height: 175px !important;
+}
+
+.summary-thank-you, .details-thank-you, .date-end-learn{
+  font-size: 10px;
+  margin-bottom: -55px !important;
+}
+
+.gemara, .tractate-name{
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.button-main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.anticon-down-circle svg{
+  width: 20px;
+  color: #780012;
+  margin-top: 20px
 }

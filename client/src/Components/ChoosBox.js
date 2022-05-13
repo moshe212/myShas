@@ -68,11 +68,23 @@ const ChoosBox = (props) => {
   if (isSendDetails) {
     setTimeout(function () {
       setIsSendDetails(false);
-    }, 2000);
+    }, 3000);
     return (
       <div className="thank-you ChoosBox">
         <p>יישר כח</p>
-        <p>{`${details.gemara} ${details.tractateName}`}</p>
+        <p className="summary-thank-you">קיבלת על עצמך ללמוד</p>
+        {details.tractateName ? (
+          <p className="details-thank-you">
+            פרק <span className="gemara">{details.gemara}</span> במסכת{" "}
+            <span className="tractate-name">{details.tractateName}</span>
+          </p>
+        ) : (
+          <p className="details-thank-you">
+            מסכת <span className="gemara">{details.gemara}</span>
+          </p>
+        )}
+
+        <p className="date-end-learn">עד כט טבת תשפ"ג</p>
       </div>
     );
   } else if (isSendDetails === "notSaveInDB") {
