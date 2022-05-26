@@ -12,8 +12,8 @@ const MainBooks = () => {
     history.push("/");
   }
 
-  function goToJgive() {
-    history.push("/jGive");
+  function goToCharidy() {
+    history.push("/charidy");
   }
 
   return (
@@ -69,7 +69,7 @@ const MainBooks = () => {
         ></img>
 
         <div className="main-books-item2">הספרים</div>
-        <div className="main-books-item6" onClick={goToJgive}>
+        <div className="main-books-item6" onClick={goToCharidy}>
           היה שותף
         </div>
       </div>

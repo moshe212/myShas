@@ -26,9 +26,9 @@ const MainRouter = () => {
           <MainBooks />
         </Route>
         <Route
-          path="/jGive"
+          path="/charidy"
           component={() => {
-            window.location = "https://www.jgive.com/new/he/ils/contacts";
+            window.location = "https://www.charidy.com/rabanim";
             return null;
           }}
         />
