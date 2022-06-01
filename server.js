@@ -103,7 +103,15 @@ app.post("/api/LearnRegistration", async (req, res) => {
 app.post("/api/getAllShas", async (req, res) => {
   console.log(req.body);
   const data = await mongoFunc.getAllShas();
+
   res.status(200).send(data);
+});
+
+app.post("/api/getStudyDetails", async (req, res) => {
+  console.log(req.body);
+  const studyData = await mongoFunc.getStudyDetails();
+  // console.log("studyData", studyData);
+  res.status(200).send(studyData);
 });
 
 app.get("*", (req, res) => {

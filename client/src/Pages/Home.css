@@ -284,7 +284,6 @@
 .ProjectRoot .footer {
   width: 100%;
   height: 30%;
-  background-color: #780012;
 }
 
 .ProjectRoot .footer p {
@@ -391,8 +390,8 @@
     width: 80% !important;
   }
 
-  .footerImg {
-    display: none;
+  .study-list {
+    display: none !important;
   }
 }
 
@@ -446,3 +445,15 @@
     margin-top: 38%;
   }
 } */
+
+.all-rights-reserved{
+  background-color: #780012;
+}
+
+.study-list{
+  background-image:  url("../../public/Images/clear_background.jpg"); 
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

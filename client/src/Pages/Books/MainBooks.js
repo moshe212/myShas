@@ -150,8 +150,10 @@ const MainBooks = () => {
           src="/Images/booksBackground.jpg"
           alt=""
         ></img>
-        <p>כל הזכויות שמורות ל- DreamApp</p>
-        <p>052-3587990</p>
+        <div className="all-rights-reserved">
+          <p>כל הזכויות שמורות ל- DreamApp</p>
+          <p>052-3587990</p>
+        </div>
       </div>
     </div>
   );

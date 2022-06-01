@@ -126,7 +126,7 @@
 .footer {
   width: 100%;
   height: 30%;
-  background-color: #780012;
+  
 }
 
 .footer p {
@@ -224,4 +224,8 @@
   .main .footerImg {
     display: block;
   }
+}
+
+.all-rights-reserved{
+  background-color: #780012;
 }

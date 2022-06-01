@@ -1,0 +1,42 @@
+.learn-details p{
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    color: #780012 !important;
+    
+}
+
+.learn-details .full-name{
+    font-size: 20px !important;
+}
+
+.learn-details{
+    background-color: #f1f1f1;
+    width: 20%;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 0px 0px 42px 0px rgb(89 51 15 / 20%), inset 0px 0px 45px 0px rgb(242 138 51 / 24%);
+    border-radius: 8px;
+    padding: 20px;
+    height: 115px;
+}
+
+.study-details{
+    display: flex;
+    /* max-width: 65%; */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chapter-tractate-name p{
+    font-size: 12px !important;
+    margin-bottom: -15px !important;
+}
+
+.in-tractate-name{
+    margin-top: -10px !important;
+}

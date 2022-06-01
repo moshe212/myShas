@@ -6,12 +6,13 @@ import BizTicker from "../Components/Ticker";
 import ChoosBox from "../Components/ChoosBox";
 import ProgressBar from "../Components/ProgressBar";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import StudyDetails from "../Components/StudyDetails";
 import "./Home.css";
 
 const Home = () => {
   const [isAvailable, setIsAvailable] = useState(true);
   const [data, setData] = useState([]);
+  const [studyDetails, setStudyDetails] = useState([]);
   const { id } = useParams();
   console.log(id);
   // console.log(starCount);
@@ -38,6 +39,18 @@ const Home = () => {
         console.log(error);
       });
   }, [isAvailable]);
+
+  useEffect(() => {
+    axios
+      .post("/api/getStudyDetails")
+      .then(function (response) {
+        setStudyDetails(response.data);
+        console.log("Studydata", response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="ProjectRoot">
@@ -145,13 +158,13 @@ const Home = () => {
           </div>
         </div>
         <div className="footer">
-          <img
-            className="footerImg"
-            src="/Images/clear_background.jpg"
-            alt=""
-          ></img>
-          <p>כל הזכויות שמורות ל- DreamApp</p>
-          <p>052-3587990</p>
+          <div className="study-list">
+            <StudyDetails studyDetails={studyDetails} />
+          </div>
+          <div className="all-rights-reserved">
+            <p>כל הזכויות שמורות ל- DreamApp</p>
+            <p>052-3587990</p>
+          </div>
         </div>
       </div>
     </div>
