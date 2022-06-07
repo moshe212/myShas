@@ -390,9 +390,7 @@
     width: 80% !important;
   }
 
-  .study-list {
-    display: none !important;
-  }
+  
 }
 
 @media screen and (max-width: 750px) {
@@ -452,8 +450,10 @@
 
 .study-list{
   background-image:  url("../../public/Images/clear_background.jpg"); 
-  height: 600px;
+  /* height: 600px; */
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 }

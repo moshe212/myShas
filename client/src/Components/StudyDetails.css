@@ -1,5 +1,5 @@
 .learn-details p{
-    font-size: 30px !important;
+    font-size: 30px ;
     font-weight: 500 !important;
     color: #780012 !important;
     
@@ -34,9 +34,61 @@
 
 .chapter-tractate-name p{
     font-size: 12px !important;
-    margin-bottom: -15px !important;
+    margin-bottom: -10px !important;
 }
 
 .in-tractate-name{
     margin-top: -10px !important;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .study-list {
+        background-image: url(http://localhost:3000/static/media/clear_background.f5f2d79….jpg);
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 20px; */
+        padding-bottom: 20px;
+      }
+    
+      .study-details {
+        display: flex;
+        /* max-width: 65%; */
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+      .learn-details {
+        background-color: #f1f1f1;
+        width: 40%;
+        margin-left: 20px;
+        margin-right: 10px;
+        margin-top: 40px;
+        text-align: center;
+        /* font-size: 4px; */
+        box-shadow: 0px 0px 42px 0px rgb(89 51 15 / 20%), inset 0px 0px 45px 0px rgb(242 138 51 / 24%);
+        border-radius: 8px;
+        padding: 20px;
+        height: 115px;
+      }
+    
+      .chapter-tractate-name p {
+        font-size: 12px !important;
+        margin-bottom: -10px !important;
+      }
+    
+      .chapter-tractate-name {
+        font-size: 18px !important;
+        /* margin-bottom: -10px !important; */
+      }
+      
+      /* .learn-details p {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        color: #780012 !important;
+      } */
 }
