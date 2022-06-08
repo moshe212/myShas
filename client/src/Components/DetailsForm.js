@@ -64,7 +64,15 @@ const DetailsForm = (props) => {
               placeholder="שם מלא"
             />
           </Form.Item>
-          <Form.Item>
+          <Form.Item
+            name="learnPhone"
+            rules={[
+              {
+                required: true,
+                message: "שדה זה הינו שדה חובה",
+              },
+            ]}
+          >
             <Input
               name="learnPhone"
               onChange={getValueFromEvent}
