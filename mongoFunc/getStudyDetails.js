@@ -18,11 +18,11 @@ const getStudyDetails = async function () {
         distinctNotTaken.push(notTaken[i].TractateCounter);
       }
     }
-
+    console.log({ distinctNotTaken });
     // console.log({ distinctTaken });
     // console.log({ distinctNotTaken });
     // console.log("data", Data);
-
+    // console.log({ taken });
     const takenDetailsList = taken.map((taken) => {
       const studyDetailsObj = distinctNotTaken.includes(taken.TractateCounter)
         ? {
@@ -36,12 +36,12 @@ const getStudyDetails = async function () {
             TractateName: taken.TractateName,
             FullName: taken.FullName,
           };
-
+      // console.log({ studyDetailsObj });
       return studyDetailsObj;
     });
 
     const uniqetakenForClient = [];
-    const isFound = (tractateName) =>
+    const checkIfIsFound = (tractateName) =>
       uniqetakenForClient.some((element) => {
         if (element.TractateName === tractateName) {
           return true;
@@ -49,18 +49,25 @@ const getStudyDetails = async function () {
 
         return false;
       });
-    for (let i = 0; i < takenDetailsList.length; i++) {
-      if (takenDetailsList[i].TractateName) {
-        const isExist = isFound(takenDetailsList[i].TractateName);
 
-        if (!isExist) {
-          uniqetakenForClient.push(takenDetailsList[i]);
-        }
-      } else {
+    for (let i = 0; i < takenDetailsList.length; i++) {
+      // console.log(takenDetailsList[i]);
+
+      const isExistInUniqetakenForClient = checkIfIsFound(
+        takenDetailsList[i].TractateName
+      );
+
+      const isFullTaken = !distinctNotTaken.includes(
+        takenDetailsList[i].TractateCounter
+      );
+
+      if (!isExistInUniqetakenForClient) {
+        uniqetakenForClient.push(takenDetailsList[i]);
+      } else if (!isFullTaken) {
         uniqetakenForClient.push(takenDetailsList[i]);
       }
     }
-
+    // console.log({ uniqetakenForClient });
     return uniqetakenForClient;
   } catch (error) {
     console.log(`getStudyDetails - error - ${error}`);
