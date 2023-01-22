@@ -28,7 +28,9 @@ const MainRouter = () => {
         <Route
           path="/charidy"
           component={() => {
-            window.location = "https://www.charidy.com/rabanim";
+            // window.location = "https://www.charidy.com/rabanim";
+            window.location =
+              "https://my.israelgives.org/he/fundme/haravshlomoansbacher";
             return null;
           }}
         />
