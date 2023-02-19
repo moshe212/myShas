@@ -47,16 +47,33 @@ const MainBooks = () => {
               בדואר
             </div>
           ) : bookId === "Disk" ? (
-            <iframe
-              id="ytplayer"
-              type="text/html"
-              width="95%"
-              height="405"
-              title="youtube_iframe"
-              src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0_fWQoFpmvgPSxS3IAQkK_A"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
+            <div>
+              <h2>דיסק לקח שלמה - שיעורים במוסר, אמונה ופסיכולוגיה</h2>{" "}
+              <iframe
+                id="Disk_iframe"
+                type="text/html"
+                width="95%"
+                height="405"
+                title="דיסק לקח שלמה - שיעורים במוסר, אמונה ופסיכולוגיה"
+                src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0_fWQoFpmvgPSxS3IAQkK_A"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          ) : bookId === "Azkara" ? (
+            <div>
+              <h2>סיום שס ואזכרה במלאת 20 שנה</h2>{" "}
+              <iframe
+                id="Azkara_iframe"
+                type="text/html"
+                width="95%"
+                height="405"
+                title="סיום שס ואזכרה במלאת 20 שנה"
+                src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0884r1qmlRw0UbyqojRhLiT"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
           ) : null}
         </Modal>
       </div>
@@ -82,13 +99,12 @@ const MainBooks = () => {
           בשיעורי מחשבה, מוסר, אמונה ופסיכולוגיה. הכתבים יצאו לאור בע"ה בשתי
           מערכות: א. אמונה, מוסר והשקפה. ב. עיונים בסוגיות הש"ס. בסיעתא דשמיא
           והודות לכם זכינו להוציא לאור (בכמות מצומצמת) את המהדורה הראשונה של ספר
-          "לקח שלמה – שיעורים והדרכות בענייני מוסר ועבודת ה'". כמו כן אנו נמצאים
-          כבר בשיא העריכה של הכתבים הרבים בסוגיות הש”ס ע”י רבני “המכון לרבני
-          ישובים”, ולקראת הוצאתו לאור של כרך ראשון על סדר "מועד" אי"ה ביום השנה
-          הבא. הננו מברכים את המסייעים לפעילותנו להנצחת רוחו של הרב שלמה ז"ל
-          ומקווים בע"ה ע"י תרומתכם להוציא לאור את חיבוריו הנפלאים, אשר הוצאתם
-          כרוכה בממון רב, וע"י כך להנציח גם את תורתו דיליה ויהא בבחינת שפתותיו
-          דובבות בקבר.
+          "לקח שלמה – שיעורים והדרכות בענייני מוסר ועבודת ה'". כמו כן ב"ה זכינו
+          להוציא לאור את הכרך הראשון בסדרת שיעורי העיון וכעת אנו נמצאים כבר בשיא
+          העריכה של הכרכים הבאים בסוגיות הש”ס. הננו מברכים את המסייעים לפעילותנו
+          להנצחת רוחו של הרב שלמה ז"ל ומקווים בע"ה ע"י תרומתכם להוציא לאור את
+          חיבוריו הנפלאים, אשר הוצאתם כרוכה בממון רב, וע"י כך להנציח גם את תורתו
+          דיליה ויהא בבחינת שפתותיו דובבות בקבר.
         </div>
         <div className="bookshelf">
           <div className="shelf">
@@ -129,6 +145,15 @@ const MainBooks = () => {
                     setBookId("Disk");
                   }}
                   src="/Images/Disk.jpg"
+                  alt=""
+                ></img>
+                <img
+                  className="Azkara"
+                  onClick={() => {
+                    setVisible(true);
+                    setBookId("Azkara");
+                  }}
+                  src="/Images/Azkara.png"
                   alt=""
                 ></img>
               </div>
