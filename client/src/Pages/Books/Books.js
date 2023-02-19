@@ -93,7 +93,7 @@ import "turn.js";
 import { useParams } from "react-router-dom";
 import "./styles.css";
 
-import Turn from "./Turn.js";
+import Turn from "../Memory/Turn.js";
 
 const options = {
   // width: 1100,
