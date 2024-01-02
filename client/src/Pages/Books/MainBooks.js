@@ -1,187 +1,154 @@
-import React, { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-import "./MainBooks.css";
-// import Modal from "react-animated-modal";
-import { Modal, Button } from "antd";
+import { PageFlip } from "page-flip";
+import "./MainBook2.css";
 
-const MainBooks = () => {
-  const [visible, setVisible] = useState(false);
-  const [bookId, setBookId] = useState("");
-  let history = useHistory();
-  function handleClick() {
-    history.push("/");
-  }
+import React, { useState, useRef, useEffect } from "react";
+import HTMLFlipBook from "react-pageflip";
+// import Editor from "./TextEditor";
+import { Editor } from "@tinymce/tinymce-react";
 
-  function goToCharidy() {
-    history.push("/charidy");
-  }
-
+const PageCover = React.forwardRef((props, ref) => {
   return (
-    <div className="main">
-      <div>
-        <Modal
-          // title="Modal 1000px width"
-          centered
-          visible={visible}
-          onOk={() => setVisible(false)}
-          onCancel={() => setVisible(false)}
-          width={"80%"}
-          footer={[]}
-        >
-          {bookId === "lekachSholomo" ? (
-            <iframe
-              allowFullScreen="allowFullScreen"
-              scrolling="no"
-              className="fp-iframe"
-              style={{
-                border: "1px solid lightgray",
-                width: "100%",
-                height: "100vh",
-              }}
-              title="title"
-              src="https://heyzine.com/flip-book/cda3ae9d0c.html"
-            ></iframe>
-          ) : bookId === "zichronShlomo" ? (
-            <div className="modal-zichronShlomo">
-              .לצערנו לא הצלחנו למצוא את הקבצים של ספר זה. ניתן לקבל ספר זה
-              בדואר
-            </div>
-          ) : bookId === "Disk" ? (
-            <div>
-              <h2>דיסק לקח שלמה - שיעורים במוסר, אמונה ופסיכולוגיה</h2>{" "}
-              <iframe
-                id="Disk_iframe"
-                type="text/html"
-                width="95%"
-                height="405"
-                title="דיסק לקח שלמה - שיעורים במוסר, אמונה ופסיכולוגיה"
-                src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0_fWQoFpmvgPSxS3IAQkK_A"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          ) : bookId === "Azkara" ? (
-            <div>
-              <h2>סיום שס ואזכרה במלאת 20 שנה</h2>{" "}
-              <iframe
-                id="Azkara_iframe"
-                type="text/html"
-                width="95%"
-                height="405"
-                title="סיום שס ואזכרה במלאת 20 שנה"
-                src="https://www.youtube.com/embed/?listType=playlist&list=PLkGN7I5rrj0884r1qmlRw0UbyqojRhLiT"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
-          ) : null}
-        </Modal>
-      </div>
-      <div className="main-books-header-grid-container">
-        <img
-          className="main-books-item1"
-          src="/Images/book.png"
-          alt=""
-          onClick={handleClick}
-        ></img>
-
-        <div className="main-books-item2">הספרים</div>
-        <div className="main-books-item6" onClick={goToCharidy}>
-          היה שותף
-        </div>
-      </div>
-      <div className="center">
-        <div className="details">
-          ידוע שהתורה שבכתב הינה תורה כללית השייכת לכלל עם ישראל, ואילו התורה
-          שבע"פ היא המקום בו כל ת"ח מוצא את ביטויו ואת הזווית המיוחדת לו בהארת
-          התורה. חלקו המיוחד של הרב שלמה ז"ל בא לידי ביטוי בכתבים הרבים שהותיר
-          אחריו, החל בשיעורי הגמרא שהעביר במשך כ-20 שנות שימושו כר”מ בישיבה וכלה
-          בשיעורי מחשבה, מוסר, אמונה ופסיכולוגיה. הכתבים יצאו לאור בע"ה בשתי
-          מערכות: א. אמונה, מוסר והשקפה. ב. עיונים בסוגיות הש"ס. בסיעתא דשמיא
-          והודות לכם זכינו להוציא לאור (בכמות מצומצמת) את המהדורה הראשונה של ספר
-          "לקח שלמה – שיעורים והדרכות בענייני מוסר ועבודת ה'". כמו כן ב"ה זכינו
-          להוציא לאור את הכרך הראשון בסדרת שיעורי העיון וכעת אנו נמצאים כבר בשיא
-          העריכה של הכרכים הבאים בסוגיות הש”ס. הננו מברכים את המסייעים לפעילותנו
-          להנצחת רוחו של הרב שלמה ז"ל ומקווים בע"ה ע"י תרומתכם להוציא לאור את
-          חיבוריו הנפלאים, אשר הוצאתם כרוכה בממון רב, וע"י כך להנציח גם את תורתו
-          דיליה ויהא בבחינת שפתותיו דובבות בקבר.
-        </div>
-        <div className="bookshelf">
-          <div className="shelf">
-            <div className="row-1">
-              <div className="booksImgs">
-                <img
-                  className="lekachSholomo"
-                  onClick={() => {
-                    setVisible(true);
-                    setBookId("lekachSholomo");
-                  }}
-                  src="/Images/lekachShlomo.jpeg"
-                  alt=""
-                ></img>
-                <img
-                  className="zichronShlomo"
-                  onClick={() => {
-                    setVisible(true);
-                    setBookId("zichronShlomo");
-                  }}
-                  src="/Images/zichronShlomo.jpeg"
-                  alt=""
-                ></img>
-              </div>
-
-              <img
-                className="bookshelf"
-                src="/Images/wall-bookshelf.png"
-                alt=""
-              ></img>
-            </div>
-            <div className="row-2">
-              <div className="booksImgs">
-                <img
-                  className="Disk"
-                  onClick={() => {
-                    setVisible(true);
-                    setBookId("Disk");
-                  }}
-                  src="/Images/Disk.jpg"
-                  alt=""
-                ></img>
-                <img
-                  className="Azkara"
-                  onClick={() => {
-                    setVisible(true);
-                    setBookId("Azkara");
-                  }}
-                  src="/Images/Azkara.png"
-                  alt=""
-                ></img>
-              </div>
-
-              <img
-                className="bookshelf"
-                src="/Images/wall-bookshelf.png"
-                alt=""
-              ></img>
-            </div>
-          </div>
-          <p>* ניתן ללחוץ על האייקונים של הספרים\דיסק בכדי לקרוא\לשמוע</p>
-        </div>
-      </div>
-
-      <div className="footer">
-        <img
-          className="footerImg"
-          src="/Images/booksBackground.jpg"
-          alt=""
-        ></img>
-        <div className="all-rights-reserved">
-          <p>כל הזכויות שמורות ל- DreamApp</p>
-          <p>052-3587990</p>
-        </div>
+    <div className="page page-cover" ref={ref} data-density="hard">
+      <div className="page-content">
+        <h2>{props.children}</h2>
       </div>
     </div>
   );
-};
+});
+
+const Page = React.forwardRef((props, ref) => {
+  console.log(props.number);
+  const editorRef = useRef(null);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (editorRef.current) {
+        editorRef.current.focus();
+      }
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return (
+    <div className="page" ref={ref}>
+      <div className="page-content">
+        <h2 className="page-header">Page header - {props.number}</h2>
+        {/* <div className="page-image"></div>
+        <div className="page-text">{props.children}</div> */}
+        <div>
+          <Editor
+            onInit={(evt, editor) => (editorRef.current = editor)}
+            apiKey="pjg3vvtu0xlf1e2r41wq0nuefa1qaw1tliuzpedkohqoi5d5"
+            init={{
+              plugins:
+                "tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+              toolbar:
+                "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | align lineheight | tinycomments | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+              tinycomments_mode: "embedded",
+              tinycomments_author: "Author name",
+              mergetags_list: [
+                { value: "First.Name", title: "First Name" },
+                { value: "Email", title: "Email" },
+              ],
+              // ai_request: (request, respondWith) =>
+              //   respondWith.string(() =>
+              //     Promise.reject("See docs to implement AI Assistant")
+              //   ),
+            }}
+            initialValue="Welcome to TinyMCE!"
+          />
+        </div>
+        <div className="page-footer">{props.number + 1}</div>
+      </div>
+    </div>
+  );
+});
+
+function MainBooks() {
+  const [page, setPage] = useState(0);
+  const [totalPage, setTotalPage] = useState(6);
+  const flipBook = useRef(null);
+  const [state, setState] = useState("read");
+  const nextButtonClick = () => {
+    if (flipBook.current) {
+      flipBook.current.pageFlip().flipNext();
+    }
+  };
+
+  const prevButtonClick = () => {
+    if (flipBook.current) {
+      flipBook.current.pageFlip().flipPrev();
+    }
+  };
+
+  const onPage = (e) => {
+    setPage(e.data);
+  };
+
+  // useEffect(() => {
+  //   if (flipBook.current) {
+  //     setTotalPage(flipBook.current.getPageCount());
+  //   }
+  // }, [flipBook]); // This mimics componentDidMount as it only runs once
+
+  return (
+    <div>
+      <HTMLFlipBook
+        disableFlipByClick={true}
+        // state={state}
+        startPage={7}
+        width={550}
+        height={733}
+        size="fixed"
+        minWidth={315}
+        maxWidth={1000}
+        minHeight={400}
+        maxHeight={1533}
+        maxShadowOpacity={0.5}
+        showCover={true}
+        mobileScrollSupport={true}
+        onFlip={onPage}
+        // You can still define onChangeOrientation and onChangeState if needed
+        className="demo-book"
+        ref={flipBook}
+        flip={onPage}
+      >
+        <PageCover>THE END</PageCover>
+        <Page number={5} index={1}>
+          Lorem ipsum...
+        </Page>
+        <Page number={4} index={2}>
+          Lorem ipsum...
+        </Page>
+        <Page number={3} index={3}>
+          Lorem ipsum...
+        </Page>
+        <Page number={2} index={4}>
+          Lorem ipsum...
+        </Page>
+        <Page number={1} index={5}>
+          Lorem ipsum...
+        </Page>
+        <Page number={0} index={6}>
+          Lorem ipsum...
+        </Page>
+        <PageCover>BOOK TITLE</PageCover>
+      </HTMLFlipBook>
+
+      <div className="container">
+        <div>
+          <button type="button" onClick={prevButtonClick}>
+            Previous page
+          </button>
+          [<span>{page}</span> of
+          <span>{totalPage}</span>]
+          <button type="button" onClick={nextButtonClick}>
+            Next page
+          </button>
+        </div>
+        {/* Other state or orientation elements */}
+      </div>
+    </div>
+  );
+}
 
 export default MainBooks;
