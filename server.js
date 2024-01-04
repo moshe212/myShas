@@ -39,6 +39,50 @@ function connectToDB() {
   return connection;
 }
 
+app.post("/api/SaveMemories", async (req, res) => {
+  console.log("SavingMemories", req.body);
+  const data = req.body.content;
+  const index = req.body.index;
+
+  try {
+    // Create an instance of your model
+    const memory = new models.MemoryDetails({
+      Date: new Date(), // Current date
+      Index: index,
+      MemoryText: data,
+      Notes: "Some additional notes.",
+    });
+
+    memory
+      .save()
+      .then((doc) => {
+        console.log("New memory saved:", doc);
+        res.status(200).send("OK");
+      })
+      .catch((err) => {
+        console.error("Error saving memory:", err);
+        res.status(500).send("not save on db");
+      });
+  } catch (error) {
+    console.log("not success save chapter learnDetail on db", error);
+    res.send("not save on db");
+  }
+});
+
+app.post("/api/getAllMemories", async (req, res) => {
+  console.log("getAllMemories", req.body);
+
+  try {
+    console.log(req.body);
+    const data = await mongoFunc.getAllMemories();
+
+    res.status(200).send(data);
+  } catch (error) {
+    console.log("not success save chapter learnDetail on db", error);
+    res.send("not save on db");
+  }
+});
+
 app.post("/api/LearnRegistration", async (req, res) => {
   console.log(req.body);
   const gemara = req.body.detailsToSRV.gemara;

@@ -23,6 +23,10 @@ const Home = () => {
     history.push("/mainBooks");
   }
 
+  function handleClickMemory() {
+    history.push("/memories");
+  }
+
   const handelAvailable = (newValue) => {
     console.log("isAvailable", newValue);
     setIsAvailable(newValue);
@@ -82,9 +86,12 @@ const Home = () => {
             <div className="item5" onClick={handleClick}>
               הספרים
             </div>
+            <div className="item6" onClick={handleClickMemory}>
+              זכרונות
+            </div>
             <AnchorLink
               offset={() => 250}
-              className="item6"
+              className="item7"
               href="#ChoiseFlexContainer"
             >
               הצטרף עכשיו

@@ -10,7 +10,7 @@ const MainRouter = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/memory">
+        <Route path="/memories">
           <FlipBook />
         </Route>
         <Route path="/mainBooks/:bookId">
