@@ -39,33 +39,70 @@ function connectToDB() {
   return connection;
 }
 
+app.delete("/api/DeleteDraftsMemories", async (req, res) => {
+  // Retrieve userID from the request body
+  const userID = req.body.userID;
+
+  // Ensure userID is provided
+  if (!userID) {
+    return res.status(400).send("UserID is required.");
+  }
+
+  console.log("Attempting to delete drafts for user:", userID);
+
+  try {
+    // Delete all documents with status "Draft" and the specified userID
+    const result = await models.MemoryDetails.deleteMany({
+      Status: "Draft", // Match documents where Status is "Draft"
+      UserID: userID, // and UserID matches the provided userID
+    });
+
+    if (result.deletedCount > 0) {
+      console.log(`Deleted ${result.deletedCount} draft(s) for user:`, userID);
+      res.status(200).send(`Deleted ${result.deletedCount} draft(s).`);
+    } else {
+      console.log("No drafts found for deletion for user:", userID);
+      res.status(200).send("No drafts found for deletion.");
+    }
+  } catch (error) {
+    console.error("Error deleting drafts for user:", userID, error);
+    res.status(500).send("Error deleting drafts.");
+  }
+});
+
 app.post("/api/SaveMemories", async (req, res) => {
   console.log("SavingMemories", req.body);
   const data = req.body.content;
   const index = req.body.index;
+  const status = req.body.status;
+  const userID = req.body.userID; // Retrieve userID from the request
 
   try {
-    // Create an instance of your model
-    const memory = new models.MemoryDetails({
-      Date: new Date(), // Current date
-      Index: index,
-      MemoryText: data,
-      Notes: "Some additional notes.",
-    });
+    // Find a document with the specified index and userID, or create a new one
+    const memory = await models.MemoryDetails.findOneAndUpdate(
+      { Index: index, UserID: userID }, // find a document with this index and userID
+      {
+        $set: {
+          MemoryText: data, // update MemoryText
+          Status: status, // update Status
+          UserID: userID, // ensure UserID is set (for new documents)
+        },
+        $setOnInsert: {
+          Date: new Date(), // set Date only if inserting
+          Notes: "Some additional notes.", // set Notes only if inserting
+        },
+      },
+      {
+        new: true, // return the updated document
+        upsert: true, // create a new document if one doesn't exist
+      }
+    );
 
-    memory
-      .save()
-      .then((doc) => {
-        console.log("New memory saved:", doc);
-        res.status(200).send("OK");
-      })
-      .catch((err) => {
-        console.error("Error saving memory:", err);
-        res.status(500).send("not save on db");
-      });
+    console.log("Memory updated or created for user:", userID, memory);
+    res.status(200).send("OK");
   } catch (error) {
-    console.log("not success save chapter learnDetail on db", error);
-    res.send("not save on db");
+    console.error("Error saving or updating memory for user:", userID, error);
+    res.status(500).send("not save on db");
   }
 });
 

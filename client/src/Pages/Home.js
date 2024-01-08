@@ -14,7 +14,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [studyDetails, setStudyDetails] = useState([]);
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
   // console.log(starCount);
 
   let history = useHistory();
@@ -37,7 +37,7 @@ const Home = () => {
       .post("/api/getAllShas")
       .then(function (response) {
         setData(response.data);
-        console.log("response.data", response.data);
+        // console.log("response.data", response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -49,7 +49,7 @@ const Home = () => {
       .post("/api/getStudyDetails")
       .then(function (response) {
         setStudyDetails(response.data);
-        console.log("Studydata", response.data);
+        // console.log("Studydata", response.data);
       })
       .catch(function (error) {
         console.log(error);

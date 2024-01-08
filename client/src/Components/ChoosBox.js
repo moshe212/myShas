@@ -20,7 +20,7 @@ const ChoosBox = (props) => {
     TractateCounter,
     TractateName
   ) => {
-    console.log("newValue", changeValue, gemara, TractateName);
+    // console.log("newValue", changeValue, gemara, TractateName);
     setIsChoise(changeValue);
     setDetails({
       ...details,
@@ -39,7 +39,7 @@ const ChoosBox = (props) => {
 
   const handleSendDetails = (newValue, learnDetails) => {
     const detailsToSRV = { ...details, ...learnDetails };
-    console.log("Send", newValue, detailsToSRV);
+    // console.log("Send", newValue, detailsToSRV);
 
     if (learnDetails) {
       axios
@@ -47,7 +47,7 @@ const ChoosBox = (props) => {
           detailsToSRV,
         })
         .then(function (response) {
-          console.log("response", response);
+          // console.log("response", response);
           if (response.data === "OK") {
             setIsSendDetails(newValue);
             setIsChoise(false);
@@ -64,7 +64,7 @@ const ChoosBox = (props) => {
     }
   };
 
-  console.log(props);
+  // console.log(props);
   if (isSendDetails) {
     setTimeout(function () {
       setIsSendDetails(false);

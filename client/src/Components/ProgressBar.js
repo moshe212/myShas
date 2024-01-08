@@ -7,14 +7,14 @@ const ProgressBar = (props) => {
   const [leftPages, setleftPages] = useState(0);
 
   useEffect(() => {
-    console.log(props.data);
+    // console.log(props.data);
     const totallPages = props.data.map((item) => item.ChapterNumberOfPages);
-    console.log("totallPages", totallPages);
+    // console.log("totallPages", totallPages);
     const total = totallPages.reduce(
       (prev, curr) => parseFloat(prev) + parseFloat(curr),
       0
     );
-    console.log("total", total);
+    // console.log("total", total);
     const percent = (((2711 - total) / 2711) * 100).toFixed(1);
     setPerc(percent);
     if (total > 0) {

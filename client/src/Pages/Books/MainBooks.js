@@ -12,6 +12,10 @@ const MainBooks = () => {
     history.push("/");
   }
 
+  function handleClickMemories() {
+    history.push("/memories");
+  }
+
   function goToCharidy() {
     history.push("/charidy");
   }
@@ -86,6 +90,9 @@ const MainBooks = () => {
         ></img>
 
         <div className="main-books-item2">הספרים</div>
+        <div className="main-books-item3" onClick={handleClickMemories}>
+          זכרונות
+        </div>
         <div className="main-books-item6" onClick={goToCharidy}>
           היה שותף
         </div>

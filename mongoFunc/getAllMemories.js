@@ -7,7 +7,7 @@ const getAllMemories = async function () {
 
     return Data;
   } catch (error) {
-    console.log(`getAllShas - error - ${error}`);
+    console.log(`getAllMemories - error - ${error}`);
     throw error;
   }
 };
