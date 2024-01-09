@@ -13,6 +13,8 @@ function FlipBook() {
   const flipBook = useRef(null);
   const [state, setState] = useState("read");
   const [memoryData, setMemoryData] = useState([]);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
   const startPageNum = 83;
   const lastPageNum = 0;
@@ -48,6 +50,19 @@ function FlipBook() {
 
     setPage(e.data);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(parseInt(window.innerHeight) - 350);
+    };
+    console.log("h", parseInt(window.innerHeight) - 350);
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   useEffect(() => {
     const storedUUID = localStorage.getItem("myUniqueIdentifier");
     const deleteDraftsMemories = () => {
@@ -118,7 +133,7 @@ function FlipBook() {
   function goToCharidy() {
     history.push("/charidy");
   }
-  console.log(memoryData);
+
   if (!memoryData.length > 0) return <div>Loading...</div>;
   return (
     <div className="memory-main">
@@ -141,16 +156,16 @@ function FlipBook() {
       </div>
       <div>
         <HTMLFlipBook
+          // key={`${width}-${height}`}
           disableFlipByClick={true}
-          // state={state}
           startPage={83}
-          width={550}
-          height={733}
+          width={width < 768 ? width / 2 - 10 : 550}
+          height={width < 768 ? height - 180 : 733}
           size="fixed"
-          minWidth={315}
-          maxWidth={1000}
-          minHeight={400}
-          maxHeight={1533}
+          minWidth={width < 768 ? 0 : 315}
+          maxWidth={width < 768 ? 100 : 1000}
+          minHeight={width < 768 ? 0 : 400}
+          maxHeight={width < 768 ? height - 180 : 1533}
           maxShadowOpacity={0.5}
           showCover={true}
           mobileScrollSupport={true}
@@ -158,6 +173,7 @@ function FlipBook() {
           // You can still define onChangeOrientation and onChangeState if needed
           className="demo-book"
           ref={flipBook}
+          // usePortrait={false}
         >
           <PageCover>
             <div className="back-cover-text">

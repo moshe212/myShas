@@ -546,3 +546,89 @@ h2 {
   font-size: medium;
   font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .memory-item2,
+  .memory-item3 {
+    font-size: 20px; /* Smaller font for mobile */
+    margin-left: 0; /* Adjust the margin */
+    margin-right: 0;
+  }
+
+  .cover-header h2,
+  .cover-header p,
+  .back-cover-text,
+  .cover-years {
+    font-size: 16px; /* Smaller font for headers and text on mobile */
+  }
+
+  .editorBtn {
+    width: auto; /* Adjust button width for mobile */
+    padding: 9px; /* Increase padding for touch-friendliness */
+    font-size: 12px;
+    height: 30px;
+    line-height: 9px;
+  }
+
+  .demo-book {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Adjust height automatically */
+  }
+
+  .page {
+    font-size: 14px; /* Smaller font size for page content */
+  }
+
+  .cover-img {
+    width: 80%; /* Make cover image responsive */
+    margin-top: 1rem;
+  }
+
+  .memory-header-grid-container {
+    grid-template-columns: repeat(3, 1fr); /* Simplify grid layout for mobile */
+    /* Adjust other grid items accordingly */
+  }
+
+  .demo-book {
+    /* Adjust the book container to fit one page */
+    width: 100%;
+    min-height: 0 !important;
+  }
+
+  .page {
+    /* Adjust the width of each page to fill the container */
+    width: 100%;
+  }
+
+  .tox-tinymce {
+    height: 330px !important;
+  }
+
+  .dirtyNotes {
+    font-size: 0.6rem;
+    margin-top: 0.25rem;
+  }
+
+  .header-memory-text {
+    margin-bottom: 0rem;
+  }
+
+  .body-memory-text {
+    padding: 0rem;
+    font-size: smaller;
+    overflow: scroll;
+    /* direction: ltr; */
+    height: 300px;
+  }
+
+  .back-cover-text {
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 12px;
+  }
+
+  .border-icon {
+    margin-top: 2rem;
+  }
+  /* Add more specific styling adjustments for other elements as needed */
+}

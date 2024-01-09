@@ -158,7 +158,7 @@ const Page = React.forwardRef((props, ref) => {
                 שמור
               </button>
 
-              {dirty && <p>טרם שמרת את התוכן שכתבת!</p>}
+              {dirty && <p className="dirtyNotes">טרם שמרת את התוכן שכתבת!</p>}
             </div>
           )}
           {currentData && (
