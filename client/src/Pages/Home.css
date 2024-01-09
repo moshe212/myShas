@@ -370,7 +370,8 @@
 
   .item3,
   .item4,
-  .item5 {
+  .item5,
+  .item6 {
     display: none;
   }
 
@@ -410,7 +411,8 @@
     height: 100%;
   }
 
-  .item7 {
+  .item7,
+  .item6 {
     /* grid-column: 12; */
     display: none;
   }
