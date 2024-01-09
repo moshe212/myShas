@@ -235,10 +235,23 @@
   }
   .main-books-item2 {
     margin-right: -10%;
-    margin-top: -5px;
+    /* margin-top: -5px; */
   }
   .main .footerImg {
     display: block;
+  }
+
+  .main-books-item2,
+  .main-books-item3 {
+    font-size: 20px; /* Smaller font for mobile */
+    margin-left: 0; /* Adjust the margin */
+    margin-right: 0;
+  }
+
+  .main-books-item6 {
+    font-size: 15px;
+    grid-column: 12;
+    width: 5rem;
   }
 }
 

@@ -547,7 +547,7 @@ h2 {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 410px) and (max-width: 950px) {
   .memory-item2,
   .memory-item3 {
     font-size: 20px; /* Smaller font for mobile */
@@ -573,10 +573,104 @@ h2 {
   .demo-book {
     width: 100%; /* Full width for smaller screens */
     height: auto; /* Adjust height automatically */
+    width: 100%;
+    min-height: 0 !important;
+  }
+
+  .page {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .cover-img {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .memory-header-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tox-tinymce {
+    height: 600px !important;
+  }
+
+  .dirtyNotes {
+    font-size: 0.6rem;
+    margin-top: 0.25rem;
+  }
+
+  .header-memory-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .body-memory-text {
+    padding: 0rem;
+    font-size: smaller;
+    overflow: scroll;
+    /* direction: ltr; */
+    height: 700px;
+  }
+
+  .back-cover-text {
+    padding: 0;
+    margin-top: 1rem;
+    font-size: 15px;
+  }
+
+  .border-icon {
+    margin-top: 2rem;
+  }
+
+  .front-cover {
+    margin-top: 9rem;
+  }
+
+  .page .page-content .page-header {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 400px) {
+  .memory-item7 {
+    font-size: 15px;
+    grid-column: 12;
+    width: 5rem;
+  }
+
+  .memory-item2,
+  .memory-item3 {
+    font-size: 20px; /* Smaller font for mobile */
+    margin-left: 0; /* Adjust the margin */
+    margin-right: 0;
+  }
+
+  .cover-header h2,
+  .cover-header p,
+  .back-cover-text,
+  .cover-years {
+    font-size: 16px; /* Smaller font for headers and text on mobile */
+  }
+
+  .editorBtn {
+    width: auto; /* Adjust button width for mobile */
+    padding: 9px; /* Increase padding for touch-friendliness */
+    font-size: 12px;
+    height: 30px;
+    line-height: 9px;
+  }
+
+  .demo-book {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Adjust height automatically */
+    width: 100%;
+    min-height: 0 !important;
   }
 
   .page {
     font-size: 14px; /* Smaller font size for page content */
+    /* Adjust the width of each page to fill the container */
+    width: 100%;
   }
 
   .cover-img {
@@ -589,17 +683,6 @@ h2 {
     /* Adjust other grid items accordingly */
   }
 
-  .demo-book {
-    /* Adjust the book container to fit one page */
-    width: 100%;
-    min-height: 0 !important;
-  }
-
-  .page {
-    /* Adjust the width of each page to fill the container */
-    width: 100%;
-  }
-
   .tox-tinymce {
     height: 330px !important;
   }
@@ -610,7 +693,7 @@ h2 {
   }
 
   .header-memory-text {
-    margin-bottom: 0rem;
+    margin-bottom: 1.5rem;
   }
 
   .body-memory-text {
@@ -624,11 +707,19 @@ h2 {
   .back-cover-text {
     padding: 0;
     margin-top: 1rem;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .border-icon {
     margin-top: 2rem;
+  }
+
+  .front-cover {
+    margin-top: 6rem;
+  }
+
+  .page .page-content .page-header {
+    font-size: 85%;
   }
   /* Add more specific styling adjustments for other elements as needed */
 }

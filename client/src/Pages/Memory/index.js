@@ -206,16 +206,18 @@ function FlipBook() {
           })}
 
           <PageCover>
-            <div className="cover-header">
-              <h2>זכרון שלמה</h2> <p>ספר זכרונות</p>
-            </div>
-            <div>
-              <img
-                className="cover-img"
-                src="Images/coverImg_s.png"
-                alt="cover-img"
-              />
-              <p className="cover-years">תש"ה - תשס"ג</p>
+            <div className="front-cover">
+              <div className="cover-header">
+                <h2>זכרון שלמה</h2> <p>ספר זכרונות</p>
+              </div>
+              <div>
+                <img
+                  className="cover-img"
+                  src="Images/coverImg_s.png"
+                  alt="cover-img"
+                />
+                <p className="cover-years">תש"ה - תשס"ג</p>
+              </div>
             </div>
           </PageCover>
         </HTMLFlipBook>
